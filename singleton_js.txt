@@ -1,0 +1,72 @@
+notifications.js
+
+//export 
+class Notifications {
+
+  constructor() {
+    this.messages = [];
+  }
+
+  add(message) {
+    this.messages.push(message);
+    
+    // debug
+    document.write(`<p>${this.messages.length} - ${message}</p>`);
+    console.log('messages', this.messages);
+  }
+}
+
+export let notifications = new Notifications();
+
+
+main.js
+
+import { Notifications, notifications } from "./notifications.js";
+import { Child } from "./child.js";
+
+export class Main {
+  constructor() {
+   notifications.add('yolo 1 from main');
+    //new Notifications().add('yolo 1 from mainxxx');
+    // create new children 
+    // (they send messages in constructor)
+    let child1 = new Child('le child 1');
+    let child2 = new Child('le child 2');
+
+    // send second message from main
+    notifications.add('yolo 2 from main');
+    //new Notifications().add('yolo 2 from mainxxx');
+  }
+}
+
+// boostrap
+document.addEventListener("DOMContentLoaded", (e) => new Main());
+
+
+child.js
+
+import { notifications } from "./notifications.js";
+
+export class Child {
+
+  constructor(name) {
+    this.name = name;
+
+    notifications.add('yolo from ' + this.name)
+  }
+  
+}
+
+index.html
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="main.js"></script>
+  </body>
+</html>
+

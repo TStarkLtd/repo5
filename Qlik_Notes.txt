@@ -1,0 +1,28 @@
+
+associative user experience
+
+Green - selected
+White background - associated
+Gray - unassociated
+
+QVW worksheet for objects
+QVD data file read n write by QV only
+QVX data exchange file for no ODBC
+
+List-box
+Bookmark
+Cyclic Groups in Expressions tab Add expression then Group 
+Drill down Groups in Dimensions tab Edit Groups then New Group select Drill-down Group radio
+Containers different tab
+
+Data Model
+fact table
+dimension table
+star schema
+snowflake schema
+ER model to dimensional model
+avoid conflict synthetic keys circular reference rename or remove from either table or concatenation
+
+ODBC OLE DB
+inline table
+
